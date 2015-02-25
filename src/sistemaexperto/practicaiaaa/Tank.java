@@ -33,7 +33,15 @@ public class Tank {
 	 * @param water Metros cubicos de agua que entra al tanque, si es negativa será cantidad de agua que sale.
 	 */
 	public void addWaterToTank(double water) { 
-		valorActual += water / sideSize;
+		valorActual += water / sideSize*sideSize;
 	}
+
+	/**
+	 * @return the valorActual
+	 */
+	public double getValorActual() {
+		return valorActual;
+	}
+	
 
 }

@@ -103,4 +103,11 @@ public class ControlSystem {
 			v = 0;
 		return v;
 	}
+	/**
+	 * @return the valorActual
+	 */
+	public double getValorActual() {
+		return tank.getValorActual();
+	}
 }
+

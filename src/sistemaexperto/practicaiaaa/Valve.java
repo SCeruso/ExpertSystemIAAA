@@ -12,7 +12,7 @@ public class Valve {
 	
 	/**
 	 * 
-	 * @param v Velocidad maxima de entrada o salida, depende del signo.
+	 * @param v Velocidad maxima de flujo de pasada de agua.
 	 * @param ap Apertura de la valvula.
 	 */
 	public Valve(double v, double ap) {

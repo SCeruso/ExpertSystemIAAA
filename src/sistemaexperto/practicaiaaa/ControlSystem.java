@@ -21,6 +21,9 @@ public class ControlSystem {
 		outValve = oV;
 	}
 
+	/**
+	 * Calcula el siguiente estado de apertura de la valvula siguiendo las reglas.
+	 */
 	public void control () {
 		double num = 0;
 		double div = 0;
@@ -33,7 +36,9 @@ public class ControlSystem {
 		}
 		inValve.setApertura(num / div);
 	}
-	
+	/**
+	 * Simula el paso de un segundo modificando el nivel del agua.
+	 */
 	public void nextSecond() {
 		tank.addWaterToTank(inValve.getWaterFlow());
 		tank.addWaterToTank(-outValve.getWaterFlow());

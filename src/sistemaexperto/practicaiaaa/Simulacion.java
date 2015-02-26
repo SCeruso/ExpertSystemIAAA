@@ -17,7 +17,7 @@ public class Simulacion {
 	}
 	public void simular() {
 		ControlSystem sistema = new ControlSystem(new Tank(10.0, 20.0, 19.0),
-				new Valve(0.4, 0.5), new Valve(1, 0.1));
+				new Valve(0.4, 1), new Valve(1, 0.1));
 			System.out.println("Tiempo(S), Altura(m)");
 		for (int i = 0; i < time; i++) {
 			sistema.control();

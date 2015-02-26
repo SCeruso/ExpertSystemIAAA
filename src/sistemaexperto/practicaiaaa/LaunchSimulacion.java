@@ -6,7 +6,7 @@ import java.io.PrintStream;
 
 public class LaunchSimulacion {
 	public static void main (String[] args){
-		Simulacion sdc = new Simulacion(18000);
+		Simulacion sdc = new Simulacion(1000);
 		if(args.length>0){
 			System.out.println("el nombre del fichero es:" + args[0]);
 			PrintStream output = openStreamToFile(args[0]);

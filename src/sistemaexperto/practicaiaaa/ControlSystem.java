@@ -28,13 +28,18 @@ public class ControlSystem {
 		double num = 0;
 		double div = 0;
 		double aux;
-		
-		for (int i = -25; i < valveLimit; i+=5) {
-			 aux = Math.max(Math.max(Math.min(errorNegativo(tank.getError()), valvulaCerrada(i)), Math.min(errorCero(tank.getError()), valvulaCerrada(i))), Math.min(errorPositivo(tank.getError()), valvulaAbierta(i)));
-			 num += aux * i;
-			 div += aux;
+		double r1, r2, r3;
+		for (int i = -25; i < valveLimit; i+=1) {
+			r1 = Math.min(errorNegativo(tank.getError()), valvulaCerrada(i));
+			r2 = Math.min(errorCero(tank.getError()), valvulaCerrada(i));
+			r3 = Math.min(errorPositivo(tank.getError()), valvulaAbierta(i));
+			
+			aux = Math.max(Math.max(r1, r2), r3);
+			num += aux * i;
+			div += aux;
 		}
-		inValve.setApertura(num / div);
+	
+		inValve.setApertura((num / div) / 100);
 	}
 	/**
 	 * Simula el paso de un segundo modificando el nivel del agua.
@@ -59,7 +64,7 @@ public class ControlSystem {
 	private double errorCero(double error) {
 		double v;
 		
-		if (error <= 0 && error >= 5)
+		if (error <= 0 && error >= -5)
 			v = (5 + error) / 5;
 		else if (error <= 5 && error >= 0)
 			v =  (5 - error) / 5;

@@ -33,13 +33,13 @@ public class ControlSystem {
 			r1 = Math.min(errorNegativo(tank.getError()), valvulaCerrada(i));
 			r2 = Math.min(errorCero(tank.getError()), valvulaCerrada(i));
 			r3 = Math.min(errorPositivo(tank.getError()), valvulaAbierta(i));
-			
+
 			aux = Math.max(Math.max(r1, r2), r3);
 			num += aux * i;
 			div += aux;
 		}
 	
-		inValve.setApertura((num / div) / 100);
+		inValve.setApertura(num / (div));
 	}
 	/**
 	 * Simula el paso de un segundo modificando el nivel del agua.
